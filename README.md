@@ -22,7 +22,9 @@ Todo está listo para que le ayudes. Estas son las consultas que debes crear:
 
 * Código y nombre de todos los departamentos.
 
+```SQL
 select CODIGO, NOMBRE from DEPARTAMENTOS
+```
 
 * Mes y ejercicio de los justificantes de nómina pertenecientes al empleado cuyo código es 1.
 
