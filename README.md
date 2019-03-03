@@ -14,8 +14,6 @@ El gerente le ha explicado como funciona la gestión de nóminas y Juan, que ser
 Con todos estos datos ha llegado al siguiente modelo entidad-relación: 
   
 ![image](https://user-images.githubusercontent.com/44543081/53692994-8c9e8380-3d99-11e9-8ecb-c61af768a92c.png)
-
-**ESTE DIAGRAMA ESTABLECE UNA RELACIÓN ENTRE JUSTIFICANTE DE NÓMINA Y LINEAS QUE YO NO VEO EN LAS TABLAS, LA ÚNICA CLAVE PRIMARIA IDENTICABLE ES COD_EMP, QUE EN REALIDAD ES UNA CLAVE FORÁNEA YA QUE ES LA PRIMARIA DE EMPLEADO, POR LO QUE EN LAS SENTENCIAS SQL VOY A CONSIDERAR QUE LA RELACIÓN ES CON EMPLEADO, NO CON JUSTIFICANTE**
   
 Modelo entidad-relación que describe las relaciones entre las distintas tablas que se necesitan para la tarea.
 También ha creado las bases y ha insertado algunos datos para realizar pruebas de las consultas que haga.
@@ -84,7 +82,9 @@ select EMPLEADOS.NOMBRE as EMPLEADO, DEPARTAMENTOS.NOMBRE as DEPARTAMENTO from E
 * Nombre del empleado, mes y ejercicio de sus justificantes de nómina, número de línea y cantidad de las líneas de los justificantes para el empleado cuyo código=1.
 ```SQL
 select EMPLEADOS.NOMBRE, JUST_NOMINAS.MES, JUST_NOMINAS.EJERCICIO, LINEAS.NUMERO, LINEAS.CANTIDAD from EMPLEADOS 
-inner join JUST_NOMINAS on JUST_NOMINAS.COD_EMP=EMPLEADOS.CODIGO inner join LINEAS on LINEAS.COD_EMP=EMPLEADOS.CODIGO where EMPLEADOS.CODIGO = 1 
+inner join JUST_NOMINAS on JUST_NOMINAS.COD_EMP=EMPLEADOS.CODIGO 
+inner join LINEAS on LINEAS.COD_EMP=JUST_NOMINAS.COD_EMP and LINEAS.MES=JUST_NOMINAS.MES and LINEAS.EJERCICIO=JUST_NOMINAS.EJERCICIO 
+where EMPLEADOS.CODIGO = 1 
 ```
 * Nombre del empleado, mes y ejercicio de sus justificantes de nómina para los empleados que han trabajado en el departamento de Ventas.
 ```SQL
