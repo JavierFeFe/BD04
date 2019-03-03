@@ -148,7 +148,7 @@ select NOMBRE, EDAD, HIJOS, DEPARTAMENTOS from(
 select EMPLEADOS.NOMBRE, HIJOS, trunc(months_between(CURRENT_DATE, FNACIMIENTO)/12) as EDAD, count(COD_DEP) as DEPARTAMENTOS from EMPLEADOS
 left join TRABAJAN on TRABAJAN.COD_EMP=EMPLEADOS.CODIGO group by EMPLEADOS.NOMBRE, HIJOS, trunc(months_between(CURRENT_DATE, FNACIMIENTO)/12)
 )
-where DEPARTAMENTOS > 0
+where DEPARTAMENTOS > 1
 ```
 * Nombre, edad y número de cuenta de aquellos empleados cuya edad es múltiplo de 3.
 ```SQL
