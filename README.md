@@ -21,15 +21,47 @@ También ha creado las bases y ha insertado algunos datos para realizar pruebas 
 Todo está listo para que le ayudes. Estas son las consultas que debes crear:
 
 * Código y nombre de todos los departamentos.
+
+select CODIGO, NOMBRE from DEPARTAMENTOS
+
 * Mes y ejercicio de los justificantes de nómina pertenecientes al empleado cuyo código es 1.
+
+select MES, EJERCICIO from JUST_NOMINAS where COD_EMP=1
+
 * Número de cuenta y nombre de los empleados cuya retención es mayor o igual que 10.
+
+select CUENTA, NOMBRE from EMPLEADOS where RETENCION >= 10
+
 * Código y nombre de los empleados ordenados ascendentemente por nombre.
+
+select CODIGO, NOMBRE from EMPLEADOS order by NOMBRE asc
+
 * Nombre de los empleados que tienen más de 2 hijos.
+
+select NOMBRE from EMPLEADOS where HIJOS > 2
+
 * Código y número de cuenta de los empleados cuyo nombre empieze por 'A' o por 'J'.
+
+select CODIGO, CUENTA from EMPLEADOS where NOMBRE like 'A%' or NOMBRE like 'J%'
+
 * Número de empleados que hay en la base de datos.
+
+select count(CODIGO) FROM EMPLEADOS
+
 * Nombre del primer y último empleado en términos alfabéticos.
+
+select NOMBRE from (select NOMBRE FROM EMPLEADOS order by NOMBRE asc) where ROWNUM = 1
+union
+select NOMBRE from (select NOMBRE FROM EMPLEADOS order by NOMBRE desc) where ROWNUM = 1;
+
 * Nombre y número de hijos de los empleados cuya retención es: 8, 10 o 12.
+
+select NOMBRE, HIJOS from EMPLEADOS where RETENCION=8 or RETENCION=10 or RETENCION=12
+
 * Número de hijos y número de empleados agrupados por hijos, mostrando sólo los grupos cuyo número de empleados sea mayor que 1.
+
+select * from (select sum(HIJOS)as numero_hijos , count(CODIGO) as numero_empleados from EMPLEADOS group by HIJOS) where numero_empleados > 1;
+
 * Número de hijos, retención máxima, mínima y media de los empleados agrupados por hijos.
 * Nombre y función de los empleados que han trabajado en el departamento 1.
 * Nombre del empleado, nombre del departamento y función que han realizado de los empleados que tienen 1 hijo.
