@@ -1,18 +1,18 @@
-# BD04
-Tarea para BD04.
-Detalles de la tarea de esta unidad.
-Enunciado.
+# Tarea para BD04.
+## Detalles de la tarea de esta unidad.
 La empresa El Desván, que se dedica a la rama textil ha decidido informatizar su gestión de nóminas. Para ello BK programación desarrollará para ellos la base de datos.
 
 El gerente le ha explicado como funciona la gestión de nóminas y Juan, que será quien se encargue de crear el modelo, las tablas y las consultas, ha recogido la siguiente información:
 
-A cada empleado se le entrega un justificante de nómina al mes. De cada empleado registraremos su código de empleado, nombre, apellidos, número de hijos, cuenta corriente y porcentaje de retención para Hacienda.
-Un empleado puede trabajar en varios Departamentos y en cada uno de ellos realizará una función.
-De un Departamento mantenemos el nombre del mismo y un código de Departamento.
-Los datos de un justificante de nómina son el ingreso total percibido por el empleado y el descuento total aplicado.
-La distinción entre dos justificantes de nómina se hace, además de mediante el código de empleado, mediante el ejercicio fiscal y número de mes al que pertenece.
-Cada justificante de nómina consta de varias líneas y cada línea se identifica por un número de línea del correspondiente justificante. Una línea puede corresponder a un ingreso o a un descuento. En ambos casos se recoge la cantidad (positiva o negativa). En el caso de los descuentos se recoge la base y el porcentaje.
+* A cada empleado se le entrega un justificante de nómina al mes. De cada empleado registraremos su código de empleado, nombre, apellidos, número de hijos, cuenta corriente y porcentaje de retención para Hacienda.
+* Un empleado puede trabajar en varios Departamentos y en cada uno de ellos realizará una función.
+* De un Departamento mantenemos el nombre del mismo y un código de Departamento.
+* Los datos de un justificante de nómina son el ingreso total percibido por el empleado y el descuento total aplicado.
+* La distinción entre dos justificantes de nómina se hace, además de mediante el código de empleado, mediante el ejercicio fiscal y número de mes al que pertenece.
+* Cada justificante de nómina consta de varias líneas y cada línea se identifica por un número de línea del correspondiente justificante. Una línea puede corresponder a un ingreso o a un descuento. En ambos casos se recoge la cantidad (positiva o negativa). En el caso de los descuentos se recoge la base y el porcentaje. 
+
 Con todos estos datos ha llegado al siguiente modelo entidad-relación:
+
 
 Modelo entidad-relación que describe las relaciones entre las distintas tablas que se necesitan para la tarea.
 También ha creado las bases y ha insertado algunos datos para realizar pruebas de las consultas que haga.
