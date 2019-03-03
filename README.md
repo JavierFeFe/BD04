@@ -25,11 +25,10 @@ Todo está listo para que le ayudes. Estas son las consultas que debes crear:
 ```SQL
 select CODIGO, NOMBRE from DEPARTAMENTOS
 ```
-
 * Mes y ejercicio de los justificantes de nómina pertenecientes al empleado cuyo código es 1.
 ```SQL
 select MES, EJERCICIO from JUST_NOMINAS where COD_EMP=1
-
+```
 * Número de cuenta y nombre de los empleados cuya retención es mayor o igual que 10.
 ```SQL
 select CUENTA, NOMBRE from EMPLEADOS where RETENCION >= 10
